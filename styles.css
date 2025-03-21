@@ -1,0 +1,163 @@
+/* Fonts: from Google APIs */
+
+.tomorrow-regular {
+  font-family: "Tomorrow", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.tomorrow-light-italic {
+  font-family: "Tomorrow", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Custom assets */
+
+.terminal-frame {
+  border: 15px solid transparent;
+  border-image-source:url(images/white-terminal.png);  
+  border-image-repeat:repeat;
+  border-image-slice: 10;
+  border-image-width: 50px;
+  border-image-outset: 1;
+  background-color:white;
+  overflow-y: auto;
+}
+
+.console-frame {
+  background-color: black;
+  border: 15px solid transparent;
+  border-image-source:url(images/console.png);  
+  border-image-repeat: round;
+  border-image-slice: 3;
+  border-image-width: 15px;
+}
+
+.divider {
+  margin-bottom: 2rem;
+  height: 5px;
+}
+
+button {
+  border-image-source:url(images/button_frame.png);  
+  border-image-repeat:repeat;
+  border-image-slice: 2 2;
+  border-image-width: 10px 10px;
+  border-image-outset: 2;
+  background-color:white;
+  font-family: "Tomorrow", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+button:hover {
+  background-color:lightgray;
+}
+
+/* Styling */
+
+body {
+  align-items: center;
+  background-image: url(images/space_bg.png);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  image-rendering: pixelated;
+  font-size: 1.25rem;
+  font-family: "Tomorrow", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  max-width: 1280px;
+}
+
+.console {
+  margin: 8px;
+}
+
+.console-input {
+  display: flex;
+  padding: 4px;
+  /* width: 100%; */
+}
+
+.console-text {
+  color: white;
+  font-size: larger;
+}
+
+.console-input-text {
+  background: none; 
+  border: none;
+  width: 100%;
+}
+
+.console-input-text:focus {
+  outline: none;
+}
+
+.head-of-page {
+  border-style:dashed;
+  border-width: 5px;
+  border-color: slategray;
+  display: grid;
+  grid:
+  "a b" / 65% 35%;
+  padding: 50px
+}
+
+.profile {
+  margin-top: 72px;
+  padding: 64px;
+  height: 80vh;
+}
+
+.my-name {
+  font-size: 3rem;
+}
+
+.my-image {
+  margin: auto;
+  width:70% ;
+}
+
+.link-section {
+  display: flex;
+  grid-area: c;
+  margin-top: 40px;
+}
+
+.social-media-button {
+  display: flex;
+  margin-right: 25px;
+  border: 5px solid darkgrey;
+  padding: 5px;
+}
+.about-me-section {
+  display: grid;
+  grid:
+  "a a" 140px
+  "b c" auto / 70% 30%
+  ;
+}
+
+h1 {
+  margin-top: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+p {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.25em;
+}
