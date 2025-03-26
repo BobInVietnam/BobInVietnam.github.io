@@ -166,7 +166,7 @@ body {
 
 #project {
   border-bottom: 5px solid dimgray;
-  background-color: azure;
+  /* background-color: azure; */
   margin-top: 80px;
   text-align: center;
 }
@@ -174,13 +174,13 @@ body {
 #project-display {
   margin-top: 20px;
   border: 5px solid #b3b9d1;
-  background-color: white;
+  /* background-color: white; */
   overflow: hidden;
 }
 
 .project-container {
   border: 5px dotted dimgray;
-  background-color: cornsilk;
+  /* background-color: cornsilk; */
   display: flex;
   flex-direction: column;
   position: relative;
@@ -203,16 +203,6 @@ body {
   /* max-width: 50%;
   min-width: 30%; */
   width: 100px;
-}
-
-.project-window {
-  border: 5px solid red;
-  position: absolute;
-  top: 40px;
-  left: 40px;
-  min-width: 95px;
-  min-height: 35px;
-  z-index: 100;
 }
 
 .about-me-section {
@@ -260,10 +250,4 @@ p {
 }
 .window-button:hover {
   filter: brightness(140%)
-}
-
-.test {
-  height: 35px;
-  text-overflow: ellipsis;
-  text-wrap-mode: nowrap;
 }

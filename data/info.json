@@ -4,13 +4,15 @@
       "name": "Take The Pills?",
       "link": "https://github.com/BobInVietnam/false-realitier",
       "description": "A small parkour adventure game for <a href=\"https://itch.io/jam/2d-game-jam-n2\" target=\"_blank\" rel=\"noopener noreferrer\">2D Game Jam</a>",
-      "imgSource": "images/previews/take-the-pill"
+      "imgSource": "images/previews/take-the-pill",
+      "imgs": ["1.png"]
     },
     {
       "name": "Chesspie",
       "link": "https://github.com/BobInVietnam/Chesspie",
       "description": "Chess but with RPG elements",
-      "imgSource": "images/previews/chesspie"
+      "imgSource": "images/previews/chesspie",
+      "imgs": ["1.png", "2.png"]
     }
   ]
 }
