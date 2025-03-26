@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Cao Xuan Hung's Playground</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.svg">
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,14 +25,23 @@
         <div class="head-of-page">
           <div style="padding-right: 3rem; align-content: center; margin: 30px 0px 60px 0px;">
             <h1 class="my-name">CAO XUAN HUNG</h1>
-            <p class="tomorrow-light-italic">- A passionate game developer, UI designer, pixel artist and at home, a game enjoyer, bird lover and someone who strive to be better -</p>
+            <p class="tomorrow-medium" style="font-size: x-large; margin-bottom: 30px;">Game developer 
+              <span class="tomorrow-regular">|</span> 
+              UI designer 
+              <span class="tomorrow-regular">|</span> 
+              Pixel artist</p>
+            <p class="tomorrow-light-italic">- And at home, a video game enjoyer, photographer, bird lover and creativity chaser -</p>
             <div class="link-section">
-              <button class="social-media-button">
-                <img src="images/fb.png" style="width: 35px;">
-              </button>
-              <button class="social-media-button">
-                <img src="images/github.png" style="width: 35px;">
-              </button>
+              <a href="https://www.facebook.com/bob.in.vietnam/" target="_blank" rel="noopener noreferrer">
+                <button class="social-media-button">
+                  <img src="images/fb.png" style="width: 35px;">
+                </button>
+              </a>
+              <a href="https://github.com/BobInVietnam" target="_blank" rel="noopener noreferrer">
+                <button class="social-media-button">
+                  <img src="images/github.png" style="width: 35px;">
+                </button>
+              </a>
             </div>
           </div>
           <div style="display: grid;">
@@ -39,20 +49,35 @@
           </div>
         </div>
 
+        <!-- Where I put my "windows" of project preview. Not playable, just a slideshow of screenshots -->
+        <div style="display: flex; flex-direction: column; flex-grow: 1; background-color: antiquewhite;">
+          <h1 id="project">MY PROJECTS</h1>
+          <div id="project-display">
+
+          </div>
+        </div>
+
+        <div style="height: 1000px;"></div>
+        <!-- this should be put last -->
         <div class="about-me-section">
-          <div style="grid-area: a; align-content: end;">
+          <div class="about-me-title">
             <h1 style=" border-bottom: 5px solid darkgrey; padding-bottom: 10px; text-align: center;">
               ABOUT ME
             </h1>
           </div>
-          <div>
+          <!-- <div class="about-me-big">
+            <h2>Education</h2>
+            <div id="Education">
 
+            </div>
+            <h2>Skills</h2>
           </div>
-          <div>
-
-          </div>
+          <div class="about-me-small">
+            <h2></h2>
+          </div> -->
         </div>
       </div>
     </div>
+    <script type="module" src="script.js"></script>
   </body>
 </html>
