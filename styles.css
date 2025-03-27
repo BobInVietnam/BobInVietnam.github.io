@@ -175,7 +175,7 @@ body {
   margin-top: 20px;
   border: 5px solid #b3b9d1;
   /* background-color: white; */
-  overflow: hidden;
+  overflow: visible;
 }
 
 .project-container {

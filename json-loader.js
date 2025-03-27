@@ -9,7 +9,7 @@ const projectWindowStyle = `
   flex-direction: column; 
   resize: both; 
   overflow: auto
-`
+`;
 
 export function loadFunWindow() {
   fetch("data/info.json")
@@ -20,7 +20,7 @@ export function loadFunWindow() {
         let element = document.createElement("div");
         element.className = "project-container";
         let title = document.createElement("h2");
-        title.className = "project-title"
+        title.className = "project-title";
         title.innerHTML =
           '<a href="' +
           project.link +
@@ -34,12 +34,12 @@ export function loadFunWindow() {
         slideshowWindow.setAttribute("id", "proj-win" + index);
         slideshowWindow.style = projectWindowStyle;
 
-        const frameDiv = document.createElement('div');
-        frameDiv.style.display = 'flex';
-        frameDiv.style.flexDirection = 'row-reverse';
-    
-        const header = document.createElement('div');
-        header.className = 'window-frame';
+        const frameDiv = document.createElement("div");
+        frameDiv.style.display = "flex";
+        frameDiv.style.flexDirection = "row-reverse";
+
+        const header = document.createElement("div");
+        header.className = "window-frame";
         header.textContent = project.name;
         header.style.cssText = `
           border-image-slice: 1;
@@ -55,18 +55,18 @@ export function loadFunWindow() {
           padding-left: 10px;
         `;
 
-        const buttons = ['minimize', 'shrink', 'close'].map(type => {
-          const button = document.createElement('button');
-          button.className = 'window-button';
+        const buttons = ["minimize", "shrink", "close"].map((type) => {
+          const button = document.createElement("button");
+          button.className = "window-button";
           button.style.backgroundImage = `url(images/wd_button_${type}.png)`;
-          button.style.backgroundSize = 'cover';
+          button.style.backgroundSize = "cover";
           return button;
         });
-    
+
         frameDiv.append(...buttons.reverse(), header);
 
-        const slideshowContainer = document.createElement('div');
-        slideshowContainer.className = 'image-slideshow window-frame';
+        const slideshowContainer = document.createElement("div");
+        slideshowContainer.className = "image-slideshow window-frame";
         slideshowContainer.style.cssText = `
           display: grid;
           grid: 
@@ -78,15 +78,15 @@ export function loadFunWindow() {
           overflow: hidden;
           padding: 10px;
         `;
-    
+
         // Image Display Area
         const imageGridDiv = document.createElement("div");
         imageGridDiv.style.cssText = `
           height: 100%;
           grid-area: b;
-        `
-        const imageDisplay = document.createElement('img');
-        imageDisplay.className = 'slideshow-image';
+        `;
+        const imageDisplay = document.createElement("img");
+        imageDisplay.className = "slideshow-image";
         imageDisplay.style.cssText = `
           width: 100%;
           height: 100%;
@@ -94,48 +94,49 @@ export function loadFunWindow() {
           object-fit: contain;
           transition: opacity 0.3s ease;
         `;
-    
+
         // Navigation Buttons
-        const prevButton = createSlideshowButton('←', 'prev');
-        prevButton.style.gridArea = "a"
-        const nextButton = createSlideshowButton('→', 'next');
-        nextButton.style.gridArea = "c"
-    
-        imageGridDiv.append(imageDisplay)
+        const prevButton = createSlideshowButton("←", "prev");
+        prevButton.style.gridArea = "a";
+        const nextButton = createSlideshowButton("→", "next");
+        nextButton.style.gridArea = "c";
+
+        imageGridDiv.append(imageDisplay);
         slideshowContainer.append(prevButton, imageGridDiv, nextButton);
-    
+
         // Image Management
-        const imageName = project.imgs
-        const images = []
+        const imageName = project.imgs;
+        const images = [];
         imageName.forEach((id) => {
-          images.push(project.imgSource + "/" + id)
-        })
+          images.push(project.imgSource + "/" + id);
+        });
         let currentImageIndex = 0;
-    
+
         // Initial image load
         if (images.length > 0) {
           imageDisplay.src = images[0];
         }
-    
+
         // Button click handlers
-        prevButton.addEventListener('click', () => {
-          currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+        prevButton.addEventListener("click", () => {
+          currentImageIndex =
+            (currentImageIndex - 1 + images.length) % images.length;
           imageDisplay.src = images[currentImageIndex];
         });
-    
-        nextButton.addEventListener('click', () => {
+
+        nextButton.addEventListener("click", () => {
           currentImageIndex = (currentImageIndex + 1) % images.length;
           imageDisplay.src = images[currentImageIndex];
         });
-    
+
         // Hide buttons if only one image
         if (images.length <= 1) {
-          prevButton.style.display = 'none';
-          nextButton.style.display = 'none';
+          prevButton.style.display = "none";
+          nextButton.style.display = "none";
         }
 
         function createSlideshowButton(text, type) {
-          const button = document.createElement('button');
+          const button = document.createElement("button");
           button.textContent = text;
           button.className = `slideshow-${type}-button`;
           button.style.cssText = `
@@ -146,21 +147,22 @@ export function loadFunWindow() {
             margin: 0 10px;
             cursor: pointer;
             transition: background 0.3s ease;
+            z-index: 102
           `;
-      
+
           // Hover effects
-          button.addEventListener('mouseenter', () => {
-            button.style.background = 'rgba(0,0,0,0.7)';
+          button.addEventListener("mouseenter", () => {
+            button.style.background = "rgba(0,0,0,0.7)";
           });
-      
-          button.addEventListener('mouseleave', () => {
-            button.style.background = 'rgba(0,0,0,0.5)';
+
+          button.addEventListener("mouseleave", () => {
+            button.style.background = "rgba(0,0,0,0.5)";
           });
-      
+
           return button;
         }
 
-        slideshowWindow.append(frameDiv, slideshowContainer)
+        slideshowWindow.append(frameDiv, slideshowContainer);
 
         let description = document.createElement("p");
         // description.setAttribute("class", "project-description");
@@ -170,17 +172,21 @@ export function loadFunWindow() {
             flex-grow: 1;
             margin-right: 30px;
             width: 35%;
-          `
+          `;
         description.innerHTML = project.description;
-        
-        slideshowWindow.onmouseenter = () => {
-          console.log("Window changed")
-          description.style.width = (element.clientWidth - slideshowWindow.style.width - slideshowWindow.style.left) + "px"
-        }
 
-        makeDraggable(slideshowWindow, header, description)
-        element.appendChild(slideshowWindow)
-        element.appendChild(description)
+        slideshowWindow.onmouseenter = () => {
+          console.log("Window changed");
+          description.style.width =
+            element.clientWidth -
+            slideshowWindow.style.width -
+            slideshowWindow.style.left +
+            "px";
+        };
+
+        makeDraggable(slideshowWindow, header, description);
+        element.appendChild(slideshowWindow);
+        element.appendChild(description);
         // Append to the container
         container.appendChild(element);
         console.log("loaded project");
@@ -197,9 +203,9 @@ function makeDraggable(element, handle, textBlock) {
     isDragging = true;
     startX = event.clientX;
     startY = event.clientY;
-    
-    document.addEventListener('mousemove', onMouseMove);
-    document.addEventListener('mouseup', onMouseUp);
+
+    document.addEventListener("mousemove", onMouseMove);
+    document.addEventListener("mouseup", onMouseUp);
   };
 
   const onMouseMove = (event) => {
@@ -212,25 +218,31 @@ function makeDraggable(element, handle, textBlock) {
     element.style.top = `${element.offsetTop + deltaY}px`;
 
     // if (textBlock.clientWidth % 20 == 0) console.log(textBlock.clientWidth)
-    changeTextWidth(event)
+    changeTextWidth(event);
   };
 
   const onMouseUp = () => {
     isDragging = false;
-    document.removeEventListener('mousemove', onMouseMove);
-    document.removeEventListener('mouseup', onMouseUp);
+    document.removeEventListener("mousemove", onMouseMove);
+    document.removeEventListener("mouseup", onMouseUp);
   };
 
   const changeTextWidth = (event) => {
-    let newWidth = Math.max(document.getElementById("project-display").clientWidth - element.clientWidth - element.offsetLeft - 120, 150)
-    textBlock.style.width = `${newWidth}px`
+    let newWidth = Math.min(
+      Math.max(
+        document.getElementById("project-display").clientWidth -
+          element.clientWidth -
+          element.offsetLeft -
+          120,
+        150
+      ),
+      document.getElementById("project-display").clientWidth / 2
+    );
+    textBlock.style.width = `${newWidth}px`;
     startX = event.clientX;
     startY = event.clientY;
-  }
+  };
 
-
-  document.addEventListener('mousemove', (e) => {
-    
-  })
-  handle.addEventListener('mousedown', onMouseDown);
+  document.addEventListener("mousemove", (e) => {});
+  handle.addEventListener("mousedown", onMouseDown);
 }
