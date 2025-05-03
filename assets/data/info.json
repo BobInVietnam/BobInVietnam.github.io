@@ -4,21 +4,21 @@
       "name": "Take The Pills?",
       "link": "https://github.com/BobInVietnam/false-realitier",
       "description": "A small parkour adventure game for <a href=\"https://itch.io/jam/2d-game-jam-n2\" target=\"_blank\" rel=\"noopener noreferrer\">2D Game Jam</a>. <br> Featuring a short story, platforming gameplay, and some surprises.",
-      "imgSource": "images/previews/take-the-pill",
+      "imgSource": "take-the-pill",
       "imgs": ["1.png"]
     },
     {
       "name": "Chesspie",
       "link": "https://github.com/BobInVietnam/Chesspie",
       "description": "(development ongoing) <br> Normal chess, blended with some turn-based RPG elements. <br> Explore a new ",
-      "imgSource": "images/previews/chesspie",
+      "imgSource": "chesspie",
       "imgs": ["1.png", "2.png"]
     },
     {
       "name": "Mazing",
       "link": "https://github.com/BobInVietnam/Mazing",
       "description": "An old game about maze running and obstacles dodging.",
-      "imgSource": "images/previews/mazing",
+      "imgSource": "mazing",
       "imgs": ["1.png"]
     }
   ]

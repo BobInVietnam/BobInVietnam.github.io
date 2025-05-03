@@ -10,9 +10,10 @@ const projectWindowStyle = `
   resize: both; 
   overflow: auto
 `;
+const imagePath = "assets/images/previews/"
 
 export function loadFunWindow() {
-  fetch("data/info.json")
+  fetch("assets/data/info.json")
     .then((response) => response.json())
     .then((data) => {
       const container = document.getElementById("project-display");
@@ -53,12 +54,13 @@ export function loadFunWindow() {
           text-overflow: ellipsis;
           padding: 5px;
           padding-left: 10px;
+          cursor: move;
         `;
 
         const buttons = ["minimize", "shrink", "close"].map((type) => {
           const button = document.createElement("button");
           button.className = "window-button";
-          button.style.backgroundImage = `url(images/wd_button_${type}.png)`;
+          button.style.backgroundImage = `url(assets/images/wd_button_${type}.png)`;
           button.style.backgroundSize = "cover";
           return button;
         });
@@ -108,7 +110,7 @@ export function loadFunWindow() {
         const imageName = project.imgs;
         const images = [];
         imageName.forEach((id) => {
-          images.push(project.imgSource + "/" + id);
+          images.push(imagePath + project.imgSource + "/" + id);
         });
         let currentImageIndex = 0;
 
